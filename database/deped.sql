@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 12, 2017 at 04:51 AM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 7.0.9
+-- Host: localhost:3306
+-- Generation Time: May 12, 2022 at 12:49 PM
+-- Server version: 5.7.33
+-- PHP Version: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -125,6 +127,7 @@ CREATE TABLE `tbl_item` (
   `item_purdate` date NOT NULL,
   `emp_id` int(11) NOT NULL,
   `cat_id` int(11) NOT NULL,
+  `item_prop_num` varchar(255) DEFAULT NULL,
   `con_id` int(11) NOT NULL DEFAULT '4',
   `status_id` int(11) NOT NULL DEFAULT '4'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -133,22 +136,24 @@ CREATE TABLE `tbl_item` (
 -- Dumping data for table `tbl_item`
 --
 
-INSERT INTO `tbl_item` (`item_id`, `item_name`, `item_serno`, `item_modno`, `item_brand`, `item_amount`, `item_purdate`, `emp_id`, `cat_id`, `con_id`, `status_id`) VALUES
-(5, 'laptop', 'serial', 'model', 'brand ', 25500, '2017-01-06', 37, 1, 2, 4),
-(10, 'AAA', '123123', '123123', '12321312', 123123, '2017-01-11', 37, 1, 2, 4),
-(12, '21323', '12321321', '12312312', '12321312', 12323, '2017-01-05', 37, 1, 2, 4),
-(13, 'Laptop', '343', '32423', 'Toshiba', 35000, '2017-01-23', 37, 1, 2, 4),
-(14, 'Computer Desk', '34324', '324234423', 'Sofa', 3500, '2017-01-24', 37, 2, 2, 4),
-(15, 'Mouse ah ah', '3423423', '234234', 'Cdr-king', 180, '2017-01-26', 37, 1, 2, 4),
-(16, 'BBB', 'BBB', 'BBB', 'BBB', 25000, '2017-01-10', 37, 1, 2, 4),
-(17, 'CCC', 'CCC', 'CCC', 'CCC', 343432, '2017-01-11', 37, 1, 2, 4),
-(18, 'Aaa', 'aaa', 'aaaa', 'Aaa', 343, '2017-01-24', 37, 1, 2, 4),
-(19, 'BBB', 'bbbb', 'bbb', 'BBb', 34342, '2017-01-10', 37, 1, 2, 4),
-(20, '111', '111', '111', '111', 111, '2017-01-17', 37, 1, 2, 4),
-(21, '24324', '24234', '435345', 'Brand', 34343, '2017-01-19', 37, 2, 2, 4),
-(22, '324', '32432', '23423', '23432', 23423, '2017-03-08', 39, 1, 1, 4),
-(23, 'Taller Gold', '234234', '234234', 'Artificial T', 1, '2017-03-09', 37, 1, 1, 4),
-(24, 'Sip On', ' ', ' ', ' ', 34, '2017-03-22', 39, 2, 1, 4);
+INSERT INTO `tbl_item` (`item_id`, `item_name`, `item_serno`, `item_modno`, `item_brand`, `item_amount`, `item_purdate`, `emp_id`, `cat_id`, `item_prop_num`, `con_id`, `status_id`) VALUES
+(5, 'laptop', 'serial', 'model', 'brand ', 25500, '2017-01-06', 37, 1, 'lorem-ipsum dolor', 2, 4),
+(10, 'AAA', '123123', '123123', '12321312', 123123, '2017-01-11', 37, 1, NULL, 2, 4),
+(12, '21323', '12321321', '12312312', '12321312', 12323, '2017-01-05', 37, 1, NULL, 2, 4),
+(13, 'Laptop', '343', '32423', 'Toshiba', 35000, '2017-01-23', 37, 1, NULL, 2, 4),
+(14, 'Computer Desk', '34324', '324234423', 'Sofa', 3500, '2017-01-24', 37, 2, NULL, 2, 4),
+(15, 'Mouse ah ah', '3423423', '234234', 'Cdr-king', 180, '2017-01-26', 37, 1, NULL, 2, 4),
+(16, 'BBB', 'BBB', 'BBB', 'BBB', 25000, '2017-01-10', 37, 1, NULL, 2, 4),
+(17, 'CCC', 'CCC', 'CCC', 'CCC', 343432, '2017-01-11', 37, 1, NULL, 2, 4),
+(18, 'Aaa', 'aaa', 'aaaa', 'Aaa', 343, '2017-01-24', 37, 1, NULL, 2, 4),
+(19, 'BBB', 'bbbb', 'bbb', 'BBb', 34342, '2017-01-10', 37, 1, NULL, 2, 4),
+(20, '111', '111', '111', '111', 111, '2017-01-17', 37, 1, NULL, 2, 4),
+(21, '24324', '24234', '435345', 'Brand', 34343, '2017-01-19', 37, 2, NULL, 2, 4),
+(22, '324', '32432', '23423', '23432', 23423, '2017-03-08', 39, 1, 'ipsum-test', 1, 4),
+(23, 'Taller Gold', '234234', '234234', 'Artificial T', 1, '2017-03-09', 37, 1, NULL, 1, 4),
+(24, 'Sip On', ' ', ' ', ' ', 34, '2017-03-22', 39, 2, NULL, 1, 4),
+(25, 'Lorem', '123123', '123123', '123123', 123123, '2022-05-12', 39, 1, NULL, 1, 4),
+(26, 'Mouse', '1312-22', 'M3', 'Razer', 2500, '2022-05-12', 37, 1, 'new-winex', 1, 4);
 
 -- --------------------------------------------------------
 
@@ -432,56 +437,67 @@ ALTER TABLE `tbl_req_type`
 --
 ALTER TABLE `tbl_cat`
   MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `tbl_con`
 --
 ALTER TABLE `tbl_con`
   MODIFY `con_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `tbl_employee`
 --
 ALTER TABLE `tbl_employee`
   MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+
 --
 -- AUTO_INCREMENT for table `tbl_emp_type`
 --
 ALTER TABLE `tbl_emp_type`
   MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `tbl_item`
 --
 ALTER TABLE `tbl_item`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
 --
 -- AUTO_INCREMENT for table `tbl_item_status`
 --
 ALTER TABLE `tbl_item_status`
   MODIFY `status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `tbl_off`
 --
 ALTER TABLE `tbl_off`
   MODIFY `off_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT for table `tbl_pos`
 --
 ALTER TABLE `tbl_pos`
   MODIFY `pos_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `tbl_request`
 --
 ALTER TABLE `tbl_request`
   MODIFY `req_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+
 --
 -- AUTO_INCREMENT for table `tbl_req_status`
 --
 ALTER TABLE `tbl_req_status`
   MODIFY `req_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `tbl_req_type`
 --
 ALTER TABLE `tbl_req_type`
   MODIFY `req_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- Constraints for dumped tables
 --
@@ -510,6 +526,7 @@ ALTER TABLE `tbl_request`
   ADD CONSTRAINT `tbl_request_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `tbl_item` (`item_id`),
   ADD CONSTRAINT `tbl_request_ibfk_2` FOREIGN KEY (`req_type_id`) REFERENCES `tbl_req_type` (`req_type_id`),
   ADD CONSTRAINT `tbl_request_ibfk_3` FOREIGN KEY (`req_status_id`) REFERENCES `tbl_req_status` (`req_status_id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

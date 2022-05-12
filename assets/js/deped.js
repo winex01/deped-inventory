@@ -160,6 +160,7 @@ function fill_update_modal(iID){
 				$('#empID-update').val(data.emp_id);
 				$('#catID-update').val(data.cat_id);
 				$('#conID-update').val(data.con_id);
+				$('#propNum-update').val(data.item_prop_num);
 
 				$('#iID').val(data.item_id)//iID
 
@@ -187,7 +188,8 @@ $(document).on('submit', '#update-item-form', function(event) {
 								$('#empID-update'),
 								$('#catID-update'),
 								$('#conID-update'),
-								$('#iID')
+								$('#iID'),
+								$('input[id=propNum-update]')
 							);
 
 	var data = new Array(form_data.length);
@@ -201,8 +203,11 @@ $(document).on('submit', '#update-item-form', function(event) {
 		}
 	}
 
+	// console.log(data);
+	// console.log(validate);
 
-	if(validate == '0123456789'){
+	if(validate == '012345678910'){
+		// console.log('here');
 		$.ajax({
 				url: '../data/update_item.php',
 				type: 'post',

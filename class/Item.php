@@ -16,10 +16,11 @@ class Item extends Database implements iItem{
 		return $result;
 	}
 
-	public function update_item($iN, $sN, $mN, $b, $a, $pD, $eID, $cID, $coID, $iID)
+	public function update_item($propNum, $iN, $sN, $mN, $b, $a, $pD, $eID, $cID, $coID, $iID)
 	{	
 		$sql="UPDATE tbl_item
 			  SET 
+			  item_prop_num = ?,
 			  item_name = ?, 
 			  item_serno = ?, 
 			  item_modno = ?, 
@@ -31,7 +32,7 @@ class Item extends Database implements iItem{
 			  con_id = ?
 			  WHERE item_id = ?
 		";
-		$result = $this->updateRow($sql, [$iN, $sN, $mN, $b, $a, $pD, $eID, $cID, $coID, $iID]);
+		$result = $this->updateRow($sql, [$propNum, $iN, $sN, $mN, $b, $a, $pD, $eID, $cID, $coID, $iID]);
 		return $result;
 	}
 

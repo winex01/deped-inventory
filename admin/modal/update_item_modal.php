@@ -18,6 +18,14 @@ $conditions = $item->item_conditions();
 				<!-- main form -->
 					<form class="form-horizontal" role="form" id="update-item-form">
 					<input type="hidden" id="iID">
+
+					<div class="form-group">
+					    <label class="control-label col-sm-3" for="propNum-update">Property No:</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" id="propNum-update" placeholder="Enter Property No" autofocus>
+					    </div>
+					  </div>
+
 					  <div class="form-group">
 					    <label class="control-label col-sm-3" for="itemName-update">Item Name:</label>
 					    <div class="col-sm-9">

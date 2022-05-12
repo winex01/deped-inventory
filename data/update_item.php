@@ -14,8 +14,9 @@ if(isset($_POST['data'])){
 	$cID = $data[7]; 			
 	$coID= $data[8]; 
 	$iID = $data[9];
+	$propNum = $data[10];
 
-	$result['valid'] = $item->update_item($iN, $sN, $mN, $b, $a, $pD, $eID, $cID, $coID, $iID);
+	$result['valid'] = $item->update_item($propNum, $iN, $sN, $mN, $b, $a, $pD, $eID, $cID, $coID, $iID);
 	if($result['valid']){
 		$result['msg'] = 'Data Updated Successfully!';
 		echo json_encode($result);

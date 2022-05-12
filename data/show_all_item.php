@@ -14,6 +14,7 @@ $allItem = $item->get_all_items();
 	        <th>Owner</th>
 	        <th>Office</th>
 	        <th>Category</th>
+	        <th>Property No</th>
 	        <th>Condition</th>
 	        <th><center>Action</center></th>
 	    </tr>
@@ -34,6 +35,7 @@ $allItem = $item->get_all_items();
 				<td onclick="item_profile('<?php echo $i['item_id']; ?>');"><?php echo $fullName; ?></td>
 				<td onclick="item_profile('<?php echo $i['item_id']; ?>');"><?php echo ucwords($i['off_desc']); ?></td>
 				<td onclick="item_profile('<?php echo $i['item_id']; ?>');"><?php echo ucwords($i['cat_desc']); ?></td>
+				<td onclick="item_profile('<?php echo $i['item_id']; ?>');"><?php echo $i['item_prop_num']; ?></td>
 				<td <?php $cond = $i['con_id']; if($cond == 1){echo 'class="text-success"';} if($cond == 2){echo 'class="text-danger"';}?>
 				onclick="item_profile('<?php echo $i['item_id']; ?>');">
 					<strong>

@@ -45,7 +45,8 @@ $(document).on('submit', '#add-item-form', function(event) {
 								$('input[id=purDate]'),
 								$('#empID'),
 								$('#catID'),
-								$('#conID')
+								$('#conID'),
+								$('input[id=propNum]')
 							);
 	
 	var data = new Array(form_data.length);
@@ -60,7 +61,10 @@ $(document).on('submit', '#add-item-form', function(event) {
 		}
 	}
 
-	if(validate == '012345678'){
+	// console.log(data);
+	// console.log(validate);
+
+	if(validate == '0123456789'){
 		$.ajax({
 			url: '../data/addItem.php',
 			type: 'post',

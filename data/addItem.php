@@ -12,10 +12,11 @@ if(isset($_POST['data'])){
 	$eID = $data[6];
 	$cID = $data[7];
 	$coID = $data[8];
+	$propNum = $data[9];
 
 
 	// $result = $item->insert_item($iN, $sN, $mN, $b, $a, $pD, $eID, $cID, $coID);
-	$result['valid'] = $item->insert_item($iN, $sN, $mN, $b, $a, $pD, $eID, $cID, $coID);
+	$result['valid'] = $item->insert_item($propNum, $iN, $sN, $mN, $b, $a, $pD, $eID, $cID, $coID);
 	if($result['valid']){
 		$result['msg'] = "Item Added Successfully!";
 		$result['action'] = "Add Data";

@@ -36,6 +36,13 @@ $conditions = $item->item_conditions();
 					  </div>
 
 					  <div class="form-group">
+					    <label class="control-label col-sm-3" for="propNum">Property No:</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" id="propNum" placeholder="Enter Property No" autofocus>
+					    </div>
+					  </div>
+
+					  <div class="form-group">
 					    <label class="control-label col-sm-3" for="itemname">Item Name:</label>
 					    <div class="col-sm-9">
 					      <input type="text" class="form-control" id="itemname" placeholder="Enter Item Name" autofocus>

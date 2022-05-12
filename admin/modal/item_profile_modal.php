@@ -8,7 +8,15 @@
 			<div class="modal-body">
 				<form class="form-horizontal" role="form" id="update-item-form">
 					<input type="hidden" id="iID">
-					  <div class="form-group">
+					  
+					<div class="form-group">
+					    <label class="control-label col-sm-3">Property No:</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control item-propNum" disabled placeholder="" autofocus>
+					    </div>
+					  </div>
+
+					<div class="form-group">
 					    <label class="control-label col-sm-3">Item Name:</label>
 					    <div class="col-sm-9">
 					      <input type="text" class="form-control item-name" disabled placeholder="Enter Item Name" autofocus>

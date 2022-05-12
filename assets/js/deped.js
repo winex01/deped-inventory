@@ -123,7 +123,7 @@ function item_profile(iID)
 			iID: iID
 		},
 		success: function(event){
-			// console.log(event);
+			console.log(event);
 			$('.item-name').val(event.item_name);
 			$('.item-brand').val(event.item_brand);
 			$('.item-serial').val(event.item_serno);
@@ -133,6 +133,7 @@ function item_profile(iID)
 			$('.item-owner').val(event.emp_fname+' '+event.emp_mname+' '+event.emp_lname);
 			$('.item-category').val(event.cat_desc);
 			$('.item-condition').val(event.con_desc);
+			$('.item-propNum').val(event.item_prop_num);
 		},
 		error: function(){
 			alert('Error: item_profile L136+');
